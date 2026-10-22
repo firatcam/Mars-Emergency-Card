@@ -1,0 +1,205 @@
+<html lang="tr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mars – Emergency Card</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&amp;family=Manrope:wght@400;500;600;700&amp;family=Noto+Sans+Arabic:wght@400;600&amp;display=swap">
+<style>
+:root{--ink: #adadad;--mute: rgb(0 0 0 / 64%);--rose: #df6e73;--peach: #b93d41;--line:rgba(120,90,160,.16);--d:"Bricolage Grotesque","Avenir Next",sans-serif;--b:"Manrope","Noto Sans Arabic","Avenir Next","Helvetica Neue",sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+body{background:#fff6f3;color: #333333;font:200 14.5px/1.6 var(--b);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+radial-gradient(60% 38% at 8% 6%,#eee,transparent 70%),radial-gradient(50% 34% at 100% 20%,#fff,transparent 70%),
+radial-gradient(60% 38% at 0% 52%,#ddd,transparent 70%),radial-gradient(55% 38% at 100% 74%,#fff,transparent 70%),
+radial-gradient(70% 40% at 30% 100%,#fff,transparent 70%),#eee}
+.wrap{max-width:430px;margin:0 auto;padding:12px 16px 44px;display:flex;flex-direction:column;gap: 10px;}
+t{display:inline}t::before{content:attr(tr)}
+body:has(option[value=en]:checked) t::before{content:attr(en)}
+body:has(option[value=es]:checked) t::before{content:attr(es)}
+body:has(option[value=fr]:checked) t::before{content:attr(fr)}
+body:has(option[value=ru]:checked) t::before{content:attr(ru)}
+body:has(option[value=ar]:checked) t::before{content:attr(ar)}
+body:has(option[value=de]:checked) t::before{content:attr(de)}
+body:has(option[value=it]:checked) t::before{content:attr(it)}
+body:has(option[value=ar]:checked) main{direction:rtl}
+
+/* Apple-style liquid glass */
+.glass{position:relative;isolation:isolate;border-radius: 5px;background:linear-gradient(145deg,rgba(255,255,255,.62),rgba(255,255,255,.2) 55%,rgba(255,255,255,.38));-webkit-backdrop-filter:blur(22px) saturate(200%);backdrop-filter:blur(22px) saturate(200%);box-shadow:inset 0 2px 1px rgba(255, 255, 255, .95), inset 0 -2px 3px rgba(255, 255, 255, .55), inset 2px 0 2px -1px rgb(0 0 0 / 9%), inset -2px 0 2px -1px rgb(0 0 0 / 3%), inset 0 0 26px rgba(255, 255, 255, .4), 0 14px 32px -14px rgb(0 0 0 / 17%), 0 2px 4px rgb(0 0 0 / 7%);overflow:hidden}
+.glass::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:radial-gradient(120% 70% at 20% -10%,rgba(255,255,255,.75),transparent 55%),radial-gradient(80% 50% at 100% 110%,rgba(255,255,255,.5),transparent 60%);pointer-events:none}
+svg{width:1.2em;height: 1.2em;fill:none;stroke: #dbdbdb;stroke-width: 1.5px;stroke-linecap:round;stroke-linejoin:round;flex:none}
+svg.f{fill:currentColor;stroke:none}
+
+a:focus-visible,select:focus-visible{outline:2px solid #a46bd0;outline-offset:2px}
+
+.lang{position:relative;height: 44px;border-radius: 0px;}
+.lang select{position:absolute;inset:0;width:100%;height:100%;appearance:none;-webkit-appearance:none;background:transparent;border:0;border-radius:inherit;font: 100 14px var(--b);color:var(--ink);padding:0 52px;cursor:pointer;text-align:start}
+.lang svg{position:absolute;top:50%;margin-top:-.6em;pointer-events:none;color: #df6e73;}
+.lang .gb{inset-inline-start:20px}
+.lang .cv{inset-inline-end:20px;width:1.1em;height:1.1em;margin-top:-.55em;color:var(--mute)}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding: 20px 0px 20px 0px;}
+h1{font: 800 66px/.88 var(--d);letter-spacing: -0.02em;background: linear-gradient(160deg, #df6e73 30%, #b93d41);-webkit-background-clip:text;background-clip:text;color:transparent;text-transform: uppercase;}
+.tag{display:flex;align-items:center;gap:8px;padding-bottom: 14px;font: 200 14px/1.2 var(--b);color:var(--mute);text-align:end}
+.tag i{display:grid;place-items:center;width:30px;height:30px;border-radius: 0px;flex:none;color:#fff;background:linear-gradient(135deg,var(--rose),var(--peach));box-shadow: inset 0 1px 1px #ffffff, 0 6px 14px -4px #ffffff;}
+.tag svg{width:16px;height:16px;stroke-width:2.8}
+.intro{padding: 0px 0px 20px 0px;color:var(--mute);font-size: 0.8em;text-align: justify;}
+
+.id{display:grid;grid-template-columns:minmax(0,48%) minmax(0,1fr);gap: 40px;padding: 0px;}
+.id>img{width: 110%;height:100%;min-height:230px;object-fit:cover;border-radius: 0px;}
+dl{display:flex;flex-direction:column;justify-content:space-between;padding: 20px 0px 20px 0px;}
+dl div{display:flex;flex-direction:column;border-bottom:1px solid var(--line);padding:1px 0 5px}
+dl div:last-child{border:0}
+dt{font-size:9.5px;color:var(--mute);font-weight:600; letter-spacing: 0.05em}
+dd{font:700 14px var(--b)}
+dd.chip{font-size: 15px;color:#333;letter-spacing:.02em;direction:ltr;text-align:start;unicode-bidi:isolate}
+
+.who{display:flex;flex-direction:column;gap:12px;padding: 20px 30px 30px 30px;}
+.who h2{font:200 16px var(--d);display:flex;align-items:center;gap:10px;}
+.who h2 span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background: linear-gradient(145deg, #df6e73, #b93d41);box-shadow: inset 0 1px 1px #ffffff, 0 4px 10px -4px rgb(107 107 107 / 50%);color: #000000;}
+.row{display:grid;grid-template-columns: repeat(3,1fr);gap:8px}
+
+/* buttons: left-to-right inner gradient fill on hover */
+.btn{--t1: #fff;--t2: #cfcfcf;--h1: #aaaaaa;--h2: #7d7d7d;--tx: #444444;--hx:#fff;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 4px;border-radius: 0px;text-decoration:none;font-weight:700;font-size:12.5px;line-height:1.2;text-align:center;color: #ffffff;background:linear-gradient(90deg,var(--h1),var(--h2)) no-repeat left center/0% 100%,linear-gradient(180deg,var(--t1),var(--t2));box-shadow:inset 0 1.5px 1px rgba(255,255,255,.95),inset 0 -2px 3px rgba(255,255,255,.35),0 8px 16px -8px rgba(58,46,77,.4);transition:background-size .6s cubic-bezier(.25,.8,.25,1),color .35s .05s,transform .15s}
+.btn:hover,.btn:focus-visible,.btn:active{background-size:100% 100%,100% 100%;color:var(--hx)}
+.btn:active{transform:scale(.97)}
+.call{--t1: #df6e73;--t2: #b93d41;--h1: #df6e73;--h2: #df6e73;--tx: #df6e73;--hx: #ffffff;}
+.wa{--t1:#45e47f;--t2:#1fbf58;--h1:#0f8f7e;--h2:#25d366;--tx:#fff;--hx:#fff}
+.mail{--t1: #b93d41;--t2: #df6e73;--h1: #df6e73;--h2: #df6e73;--tx: #b93d41;--hx:#fff}
+.dir{--t1: #df6e73;--t2: #b93d41;--h1: #df6e73;--h2: #df6e73;--tx: #df6e73;--hx: #fff;}
+.live{padding:17px 12px;font-size:15px;gap:10px;border-radius: 0px;}
+.live svg{width:1.4em;height:1.4em}
+
+.warn{display:grid;grid-template-columns: 116px 1fr;padding: 20px;}
+.warn>div{display:grid;place-items:center;background: linear-gradient(
+127deg, #b93d41, #df6e73);border-inline-end:1px solid rgba(255,255,255,.7);color:#d9731f}
+.warn svg{width: 60px;height: 60px;}
+.warn p{padding: 0px 20px 0px 20px;font-size: 0.8em;color:var(--mute);line-height: 1.46em;}
+
+.vet{display:grid;grid-template-columns: minmax(0,50%) minmax(0,1fr);align-items:start;gap: 30px;padding: 0px 0px 0px 0px;timeline-scope:--g}
+.gl{display:flex;flex-direction:column;gap: 9px;min-width:0}
+.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap: 0px;border-radius: 0px;scrollbar-width:none;aspect-ratio: 3/4.1;width:100%;scroll-timeline:--g inline}
+.gal::-webkit-scrollbar{display:none}
+.gal img{flex:0 0 100%;width:100%;height:100%;min-width:0;display:block;object-fit:cover;scroll-snap-align:center;border-radius: 0px;}
+.dots{display:flex;justify-content:center;align-items:center;gap:6px;height:12px}
+.dots i{display:block;width:6px;height:6px;border-radius:9px;background:rgba(58,46,77,.25);box-shadow:inset 0 1px 1px rgba(255,255,255,.6)}
+.dots i:first-child{width:20px;background:linear-gradient(90deg,var(--rose),var(--peach))}
+@keyframes mid{0%,100%{width:6px;background:rgba(58,46,77,.25)}50%{width:20px;background:#ff8fa8}}
+@keyframes first{from{width:20px;background:#ff8fa8}to{width:6px;background:rgba(58,46,77,.25)}}
+@keyframes last{from{width:6px;background:rgba(58,46,77,.25)}to{width:20px;background:#ff9a95}}
+@supports (animation-timeline:scroll()){
+.dots i{animation:mid linear both;animation-timeline:--g}
+.dots i:nth-child(1){animation-name:first;animation-range:0% 25%}
+.dots i:nth-child(2){animation-range:0% 50%}.dots i:nth-child(3){animation-range:25% 75%}.dots i:nth-child(4){animation-range:50% 100%}
+.dots i:nth-child(5){animation-name:last;animation-range:75% 100%}}
+.vi{display:flex;flex-direction:column;gap: 10px;padding: 20px 20px 20px 0px;}
+.badge{display:flex;align-items:center;gap:8px;font:800 30px/1 var(--d);letter-spacing:-.03em;color:#df6e73}
+.badge i{display:grid;place-items:center;width:26px;height:26px;border-radius: 0px;color:#fff;background:linear-gradient(135deg,var(--rose),var(--peach));box-shadow:inset 0 1px 1px rgba(255,255,255,.7)}
+.badge svg{width:14px;height:14px;stroke-width:3}
+.vi small{color:var(--mute);font-size:12.5px;font-weight:600;border-top:1px solid var(--line);padding-top:8px}
+.vi h3{font:800 20px/1.1 var(--d);letter-spacing:-.02em}
+.vi address{font-style:normal;font-size:12.5px;color:var(--mute);margin-bottom:auto}
+.vi .btn{margin-top:2px;padding:10px 4px}
+
+.vac{padding:30px}
+.vac h2{font:800 19px/1.2 var(--d);letter-spacing:-.02em;margin-bottom:10px}
+.sc{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{font-weight:700;color:var(--mute);text-align:start;padding:5px 4px 8px;font-size:11px}
+td{padding:10px 4px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+td:first-child{font:700 13px var(--d)}
+td:nth-child(2){color:var(--mute)}
+td:last-child{color:#b93d41;font-weight:700}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="ph" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></symbol>
+<symbol id="wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"></path></symbol>
+<symbol id="ml" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3.5"></rect><path d="M3.5 7.5l8.5 6 8.5-6"></path></symbol>
+<symbol id="us" viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.5"></circle><path d="M5 19.5c1.5-3.5 4-4.5 7-4.5s5.5 1 7 4.5"></path></symbol>
+<symbol id="nav" viewBox="0 0 24 24"><path d="M21 3L3 10.5l7 2.5 2.5 7L21 3z"></path></symbol>
+<symbol id="al" viewBox="0 0 24 24"><path d="M12 3.5l9.5 16.5h-19L12 3.5z"></path><path d="M12 10v4.5M12 17.4v.01"></path></symbol>
+<symbol id="gb" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"></path></symbol><symbol id="cv" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></symbol><symbol id="pl" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"></path></symbol>
+<symbol id="pn" viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></symbol>
+</svg>
+
+
+<main class="wrap">
+  <div class="glass lang"><svg class="gb"><use href="#gb"></use></svg><select aria-label="Dil / Language">
+    <option value="" selected="" disabled="">Dil Seçiniz...</option>
+    <option value="tr">Türkçe</option><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="ru">Русский</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="it">Italiano</option>
+  </select><svg class="cv"><use href="#cv"></use></svg></div>
+
+  <header class="head">
+    <h1>Mars</h1>
+    <div class="tag"><t tr="Acil Durum Kartı" en="Emergency Card" es="Tarjeta de emergencia" fr="Carte d’urgence" ru="Экстренная карта" ar="بطاقة الطوارئ" de="Notfallkarte" it="Scheda d’emergenza"></t><i><svg><use href="#pl"></use></svg></i></div>
+  </header>
+
+  <p class="intro"><t tr="Mars’ı bulduysanız, lütfen öncelikle bize ulaşmak için tüm iletişim kanallarını deneyin. Bizlere ulaşamamanız durumunda, 7/24 acil ulaşabileceğiniz veteriner kliniğinin iletişim numaralarını kullanabilirsiniz. Duyarlılığınız, ilginiz ve yardımınız için şimdiden çok teşekkür ederiz. Mars’ın güvenle bize kavuşmasına sağlayacağınız her türlü destek bizim için çok değerli. ❤️" en="If you find Mars, please try all available ways to contact us first. If you cannot reach us, please use the contact numbers for the 24/7 emergency veterinary clinic. Thank you in advance for your kindness, care, and help. Every effort that helps Mars return safely to us means a great deal. ❤️" es="Si encuentras a Mars, intenta primero contactar con nosotros por todos los medios disponibles. Si no consigues localizarnos, utiliza los teléfonos de la clínica veterinaria de urgencias disponible las 24 horas.
+Muchas gracias de antemano por tu atención, amabilidad y ayuda. Cualquier esfuerzo para que Mars vuelva sano y salvo con nosotros significa mucho. ❤️" fr="Si vous trouvez Mars, essayez d’abord de nous contacter par tous les moyens disponibles. Si vous n’arrivez pas à nous joindre, utilisez les coordonnées de la clinique vétérinaire d’urgence ouverte 24 h/24 et 7 j/7. Merci d’avance pour votre attention, votre gentillesse et votre aide. Chaque geste qui aide Mars à nous retrouver sain et sauf compte beaucoup pour nous. ❤️" ru="Если вы нашли Марса, сначала попробуйте связаться с нами всеми доступными способами. Если связаться не удастся, воспользуйтесь телефонами круглосуточной ветеринарной клиники. Большое спасибо за ваше внимание, доброту и помощь. Любая помощь, которая позволит Марсу благополучно вернуться домой, очень важна для нас. ❤️" ar="إذا عثرت على مارس، يُرجى محاولة التواصل معنا أولاً عبر جميع وسائل الاتصال المتاحة. إذا لم تتمكن من الوصول إلينا، فاستخدم أرقام عيادة الطوارئ البيطرية المتاحة على مدار الساعة. شكراً جزيلاً مقدماً على اهتمامكم ولطفكم ومساعدتكم. كل ما يساعد مارس على العودة إلينا بأمان يعني لنا الكثير. ❤️" de="Wenn Sie Mars gefunden haben, versuchen Sie bitte zunächst, uns über alle verfügbaren Kommunikationswege zu erreichen. Sollten Sie uns nicht erreichen können, können Sie sich im Notfall an die Telefonnummern der Tierklinik wenden, die rund um die Uhr, 24 Stunden am Tag und 7 Tage die Woche, erreichbar ist. Wir bedanken uns schon jetzt von ganzem Herzen für Ihre Rücksichtnahme, Ihre Aufmerksamkeit und Ihre Hilfe. Jede Unterstützung, die dazu beiträgt, dass Mars sicher zu uns zurückkehren kann, bedeutet uns sehr viel. ❤️" it="Se avete trovato Mars, vi preghiamo innanzitutto di provare a contattarci attraverso tutti i canali di comunicazione disponibili. Se non riuscite a raggiungerci, potete utilizzare i numeri di telefono della clinica veterinaria, disponibile 24 ore su 24, 7 giorni su 7, per le emergenze. Vi ringraziamo fin da ora di cuore per la vostra sensibilità, attenzione e disponibilità ad aiutarci. Ogni gesto che possa contribuire a far tornare Mars sano e salvo da noi è per noi davvero prezioso. ❤️"></t></p>
+  <section class="glass id">
+    <img src="images/mars-profile.jpg" alt="Mars">
+    <dl>
+      <div><dt>Chip #</dt><dd class="chip">900233002478437</dd></div>
+      <div><dt><t tr="Irk" en="Breed" es="Raza" fr="Race" ru="Порода" ar="السلالة" de="Rasse" it="Razza"></t></dt><dd>Golden Retriever</dd></div>
+      <div><dt><t tr="Cinsiyet" en="Sex" es="Sexo" fr="Sexe" ru="Пол" ar="الجنس" de="Geschlecht" it="Sesso"></t></dt><dd><t tr="Erkek" en="Male" es="Macho" fr="Mâle" ru="Самец" ar="ذكر" de="Rüde" it="Maschio"></t></dd></div>
+      <div><dt><t tr="Renk" en="Color" es="Color" fr="Couleur" ru="Окрас" ar="اللون" de="Farbe" it="Colore"></t></dt><dd><t tr="Açık altın" en="Light golden" es="Dorado claro" fr="Doré clair" ru="Светло-золотистый" ar="ذهبي فاتح" de="Hellgolden" it="Oro chiaro"></t></dd></div>
+      <div><dt><t tr="Yaş" en="Age" es="Edad" fr="Âge" ru="Возраст" ar="العمر" de="Alter" it="Età"></t></dt><dd><t tr="3 yaş" en="3 years" es="3 años" fr="3 ans" ru="3 года" ar="3 سنوات" de="3 Jahre" it="3 anni"></t></dd></div>
+      <div><dt><t tr="Doğum tarihi" en="Date of birth" es="Nacimiento" fr="Naissance" ru="Дата рождения" ar="تاريخ الميلاد" de="Geburtsdatum" it="Data di nascita"></t></dt><dd>09.08.2023</dd></div>
+    </dl>
+  </section>
+
+  <section class="glass who">
+    <h2><span><svg><use href="#us"></use></svg></span>Suzan Çam ⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅ 0531 490 7039</h2>
+    <div class="row">
+      <a class="btn call" href="tel:+905314907039"><svg><use href="#ph"></use></svg><t tr="Ara" en="Call" es="Llamar" fr="Appeler" ru="Позвонить" ar="اتصال" de="Anrufen" it="Chiama"></t></a>
+      <a class="btn wa" href="https://wa.me/905314907039"><svg class="f"><use href="#wa"></use></svg>WhatsApp</a>
+      <a class="btn mail" href="mailto:ssuzancam@gmail.com"><svg><use href="#ml"></use></svg><t tr="E-posta" en="Email" es="Correo" fr="E-mail" ru="Почта" ar="بريد" de="E-Mail" it="Email"></t></a>
+    </div>
+  </section>
+
+  <section class="glass who">
+    <h2><span><svg><use href="#us"></use></svg></span>Fırat Çam ⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅ 0531 490 7029</h2>
+    <div class="row">
+      <a class="btn call" href="tel:+905314907029"><svg><use href="#ph"></use></svg><t tr="Ara" en="Call" es="Llamar" fr="Appeler" ru="Позвонить" ar="اتصال" de="Anrufen" it="Chiama"></t></a>
+      <a class="btn wa" href="https://wa.me/905314907029"><svg class="f"><use href="#wa"></use></svg>WhatsApp</a>
+      <a class="btn mail" href="mailto:camfirat@gmail.com"><svg><use href="#ml"></use></svg><t tr="E-posta" en="Email" es="Correo" fr="E-mail" ru="Почта" ar="بريد" de="E-Mail" it="Email"></t></a>
+    </div>
+  </section>
+
+  <div class="glass" style="/* border-radius:28px; */padding:6px"><a class="btn wa live" href="https://wa.me/905314907039?text=Mars%20bulundu.%20Canl%C4%B1%20konumumu%20payla%C5%9F%C4%B1yorum."><svg class="f"><use href="#wa"></use></svg><t tr="WhatsApp ile canlı konum paylaş" en="Share live location on WhatsApp" es="Compartir ubicación en vivo" fr="Partager ma position en direct" ru="Отправить геопозицию" ar="مشاركة الموقع المباشر" de="Live-Standort teilen" it="Condividi la posizione live"></t></a></div>
+
+  <section class="glass warn">
+    <div><svg><use href="#al"></use></svg></div>
+    <p><t tr="Lütfen yaklaşırken dikkatli olun. Mars dost canlısı ve zararsızdır; ancak küçük çocuklardan, şemsiyelerden, bebek arabalarından ve heykellerden ürkebilir. Sakin ve nazik yaklaşın, korkarsa mesafesini korumasına izin verin. Anlayışınız için teşekkürler." en="Please approach gently. Mars is friendly and harmless, but small children, umbrellas, strollers and statues may startle him. Stay calm, and if he seems scared, let him keep his distance. Thank you for understanding." es="Acércate con cuidado. Mars es cariñoso e inofensivo, pero puede asustarse con niños pequeños, paraguas, cochecitos y estatuas. Mantén la calma y, si parece asustado, déjale mantener su distancia. Gracias por tu comprensión." fr="Approchez-vous doucement. Mars est gentil et inoffensif, mais les jeunes enfants, les parapluies, les poussettes et les statues peuvent l’effrayer. Restez calme et, s’il a peur, laissez-lui de la distance. Merci de votre compréhension." ru="Подходите осторожно. Марс дружелюбен и безобиден, но может испугаться маленьких детей, зонтов, колясок и статуй. Действуйте спокойно, а если он боится, дайте ему сохранить дистанцию. Спасибо за понимание." ar="يرجى الاقتراب بهدوء. مارس ودود ولا يؤذي أحداً، لكنه قد يخاف من الأطفال الصغار والمظلات وعربات الأطفال والتماثيل. تعاملوا معه بهدوء، وإذا بدا خائفاً فاتركوا له مسافته. شكراً لتفهمكم." de="Bitte nähern Sie sich vorsichtig. Mars ist freundlich und harmlos, kann aber vor kleinen Kindern, Regenschirmen, Kinderwagen und Statuen erschrecken. Bleiben Sie ruhig und lassen Sie ihm Abstand, wenn er ängstlich wirkt. Danke für Ihr Verständnis." it="Avvicinati con calma. Mars è amichevole e innocuo, ma bambini piccoli, ombrelli, passeggini e statue possono spaventarlo. Resta tranquillo e, se sembra spaventato, lascia che mantenga le distanze. Grazie per la comprensione."></t></p>
+  </section>
+
+  <section class="glass vet">
+    <div class="gl">
+      <div class="gal" role="group" aria-label="Mars">
+        <img src="images/mars-1.jpg" alt="Mars"><img src="images/mars-2.jpg" alt="Mars" loading="lazy"><img src="images/mars-3.jpg" alt="Mars" loading="lazy"><img src="images/mars-4.jpg" alt="Mars" loading="lazy"><img src="images/mars-5.jpg" alt="Mars" loading="lazy">
+      </div>
+      <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="vi">
+      <div class="badge"><i><svg><use href="#pl"></use></svg></i>7/24</div>
+      <small><t tr="Acil Durum Veteriner" en="Emergency Vet" es="Veterinario de urgencias" fr="Vétérinaire d’urgence" ru="Неотложная ветклиника" ar="طبيب بيطري للطوارئ" de="Tierarzt-Notdienst" it="Veterinario d’emergenza"></t></small>
+      <h3>Başkent Hayvan Hastanesi</h3>
+      <address>Kuzgun Sokak 91/B,<br>Ayrancı – Ankara</address>
+      <a class="btn call" href="tel:+903124381988"><svg><use href="#ph"></use></svg><t tr="Ara" en="Call" es="Llamar" fr="Appeler" ru="Позвонить" ar="اتصال" de="Anrufen" it="Chiama"></t></a>
+      <a class="btn dir" href="https://www.google.com/maps/search/?api=1&amp;query=Ba%C5%9Fkent+Hayvan+Hastanesi+Kuzgun+Sokak+91+Ayranc%C4%B1+Ankara"><svg><use href="#nav"></use></svg><t tr="Yol tarifi" en="Directions" es="Cómo llegar" fr="Itinéraire" ru="Маршрут" ar="الاتجاهات" de="Route" it="Indicazioni"></t></a>
+    </div>
+  </section>
+
+  <section class="glass vac">
+    <h2><t tr="Aşı ve Parazit Bilgileri" en="Vaccine &amp; Parasite Record" es="Vacunas y antiparasitarios" fr="Vaccins et antiparasitaires" ru="Вакцины и обработки" ar="اللقاحات والطفيليات" de="Impfungen &amp; Parasitenschutz" it="Vaccini e antiparassitari"></t></h2>
+    <div class="sc"><table>
+      <tbody><tr><th></th><th><t tr="Marka" en="Brand" es="Marca" fr="Marque" ru="Бренд" ar="العلامة" de="Marke" it="Marca"></t></th><th><t tr="Son uygulama" en="Last given" es="Última dosis" fr="Dernière dose" ru="Последняя" ar="آخر جرعة" de="Zuletzt" it="Ultima"></t></th><th><t tr="Sonraki" en="Next due" es="Próxima" fr="Prochaine" ru="Следующая" ar="القادمة" de="Nächste" it="Prossima"></t></th></tr>
+      <tr><td><t tr="Kuduz" en="Rabies" es="Rabia" fr="Rage" ru="Бешенство" ar="السعار" de="Tollwut" it="Rabbia"></t></td><td>Rabisin</td><td>01.09.2026</td><td>01.09.2027</td></tr>
+      <tr><td><t tr="Karma" en="Combo" es="Polivalente" fr="Polyvalent" ru="Комплексная" ar="المركّب" de="Kombi" it="Polivalente"></t></td><td>Nobivac</td><td>04.06.2026</td><td>04.06.2027</td></tr>
+      <tr><td><t tr="İç parazit" en="Internal" es="Interna" fr="Interne" ru="Внутр." ar="داخلي" de="Innen" it="Interno"></t></td><td>Nexguard</td><td>03.09.2026</td><td>03.11.2026</td></tr>
+      <tr><td><t tr="Dış parazit" en="External" es="Externa" fr="Externe" ru="Внешн." ar="خارجي" de="Außen" it="Esterno"></t></td><td>Nexguard</td><td>03.09.2026</td><td>03.11.2026</td></tr>
+    </tbody></table></div>
+  </section>
+</main>
+
+
+</body></html>
