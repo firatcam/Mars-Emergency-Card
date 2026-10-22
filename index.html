@@ -8,10 +8,10 @@
 *,*::before,*::after{box-sizing:inherit;margin:0}
 body{background:#fff6f3;color: #333333;font:200 14.5px/1.6 var(--b);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0;z-index:-1;background:
-radial-gradient(60% 38% at 8% 6%,#eee,transparent 70%),radial-gradient(50% 34% at 100% 20%,#fff,transparent 70%),
-radial-gradient(60% 38% at 0% 52%,#ddd,transparent 70%),radial-gradient(55% 38% at 100% 74%,#fff,transparent 70%),
-radial-gradient(70% 40% at 30% 100%,#fff,transparent 70%),#eee}
-.wrap{max-width:430px;margin:0 auto;padding:12px 16px 44px;display:flex;flex-direction:column;gap: 10px;}
+radial-gradient(60% 38% at 8% 6%, #3fde793d, transparent 70%), radial-gradient(50% 34% at 100% 20%, #df6e7354, transparent 70%), radial-gradient(60% 38% at 0% 52%, #b93d4140, transparent 70%
+70%
+), radial-gradient(55% 38% at 100% 74%, #3fde7952, transparent 70%), radial-gradient(70% 40% at 30% 100%, #aaa, transparent 70%), #ddd}
+.wrap{max-width:430px;margin:0 auto;padding:0;display:flex;flex-direction:column;gap: 1px;}
 t{display:inline}t::before{content:attr(tr)}
 body:has(option[value=en]:checked) t::before{content:attr(en)}
 body:has(option[value=es]:checked) t::before{content:attr(es)}
@@ -23,24 +23,24 @@ body:has(option[value=it]:checked) t::before{content:attr(it)}
 body:has(option[value=ar]:checked) main{direction:rtl}
 
 /* Apple-style liquid glass */
-.glass{position:relative;isolation:isolate;border-radius: 5px;background:linear-gradient(145deg,rgba(255,255,255,.62),rgba(255,255,255,.2) 55%,rgba(255,255,255,.38));-webkit-backdrop-filter:blur(22px) saturate(200%);backdrop-filter:blur(22px) saturate(200%);box-shadow:inset 0 2px 1px rgba(255, 255, 255, .95), inset 0 -2px 3px rgba(255, 255, 255, .55), inset 2px 0 2px -1px rgb(0 0 0 / 9%), inset -2px 0 2px -1px rgb(0 0 0 / 3%), inset 0 0 26px rgba(255, 255, 255, .4), 0 14px 32px -14px rgb(0 0 0 / 17%), 0 2px 4px rgb(0 0 0 / 7%);overflow:hidden}
+.glass{position:relative;isolation:isolate;border-radius: 0px;background:linear-gradient(145deg,rgba(255,255,255,.62),rgba(255,255,255,.2) 55%,rgba(255,255,255,.38));-webkit-backdrop-filter:blur(22px) saturate(200%);backdrop-filter:blur(22px) saturate(200%);box-shadow:inset 0 2px 1px rgba(255, 255, 255, .95), inset 0 -2px 3px rgba(255, 255, 255, .55), inset 2px 0 2px -1px rgb(0 0 0 / 9%), inset -2px 0 2px -1px rgb(0 0 0 / 3%), inset 0 0 26px rgba(255, 255, 255, .4), 0 14px 32px -14px rgb(0 0 0 / 17%), 0 2px 4px rgb(0 0 0 / 7%);overflow:hidden}
 .glass::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:radial-gradient(120% 70% at 20% -10%,rgba(255,255,255,.75),transparent 55%),radial-gradient(80% 50% at 100% 110%,rgba(255,255,255,.5),transparent 60%);pointer-events:none}
-svg{width:1.2em;height: 1.2em;fill:none;stroke: #dbdbdb;stroke-width: 1.5px;stroke-linecap:round;stroke-linejoin:round;flex:none}
+svg{width:1.2em;height: 1.2em;fill:none;stroke: #FFF;stroke-width: 1.5px;stroke-linecap:round;stroke-linejoin:round;flex:none}
 svg.f{fill:currentColor;stroke:none}
 
 a:focus-visible,select:focus-visible{outline:2px solid #a46bd0;outline-offset:2px}
 
-.lang{position:relative;height: 44px;border-radius: 0px;}
-.lang select{position:absolute;inset:0;width:100%;height:100%;appearance:none;-webkit-appearance:none;background:transparent;border:0;border-radius:inherit;font: 100 14px var(--b);color:var(--ink);padding:0 52px;cursor:pointer;text-align:start}
-.lang svg{position:absolute;top:50%;margin-top:-.6em;pointer-events:none;color: #df6e73;}
-.lang .gb{inset-inline-start:20px}
-.lang .cv{inset-inline-end:20px;width:1.1em;height:1.1em;margin-top:-.55em;color:var(--mute)}
-.head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding: 20px 0px 20px 0px;}
+.lang{position:relative;height: 50px;border-radius: 0px;}
+.lang select{position:absolute;inset:0;width:100%;height:100%;appearance:none;-webkit-appearance:none;background:transparent;border:0;border-radius:inherit;font: 400 16px var(--b);color:var(--peach);padding:0 55px;cursor:pointer;text-align:start}
+.lang svg{position:absolute;top:10%;margin-top:0em;pointer-events:none;color: #b93d41;width: 10%;height: 80%; stroke: #df6e73;}
+.lang .gb{inset-inline-start:10px}
+.lang .cv{inset-inline-end:20px;width:1.1em;height:1.1em;margin-top:0.65em;color:var(--mute)}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding: 35px;}
 h1{font: 800 66px/.88 var(--d);letter-spacing: -0.02em;background: linear-gradient(160deg, #df6e73 30%, #b93d41);-webkit-background-clip:text;background-clip:text;color:transparent;text-transform: uppercase;}
 .tag{display:flex;align-items:center;gap:8px;padding-bottom: 14px;font: 200 14px/1.2 var(--b);color:var(--mute);text-align:end}
-.tag i{display:grid;place-items:center;width:30px;height:30px;border-radius: 0px;flex:none;color:#fff;background:linear-gradient(135deg,var(--rose),var(--peach));box-shadow: inset 0 1px 1px #ffffff, 0 6px 14px -4px #ffffff;}
+.tag i{display:grid;place-items:center;width:30px;height:30px;border-radius: 3px;flex:none;color:#fff;background:linear-gradient(135deg,var(--rose),var(--peach));box-shadow: inset 0 1px 1px #ffffff, 0 6px 14px -4px #ffffff;}
 .tag svg{width:16px;height:16px;stroke-width:2.8}
-.intro{padding: 0px 0px 20px 0px;color:var(--mute);font-size: 15px;}
+.intro{padding: 0px 35px 35px 35px;color:var(--mute);font-size: 15px;}
 
 .id{display:grid;grid-template-columns:minmax(0,48%) minmax(0,1fr);gap: 40px;padding: 0px;}
 .id>img{width: 110%;height:100%;min-height:230px;object-fit:cover;border-radius: 0px;}
@@ -49,26 +49,26 @@ dl div{display:flex;flex-direction:column;border-bottom:1px solid var(--line);pa
 dl div:last-child{border:0}
 dt{font-size:9.5px;color:var(--mute);font-weight:600; letter-spacing: 0.05em}
 dd{font:700 14px var(--b)}
-dd.chip{font-size: 15px;color:#333;letter-spacing:.02em;direction:ltr;text-align:start;unicode-bidi:isolate}
+dd.chip{font-size: 13px;color:#333;letter-spacing:.02em;direction:ltr;text-align:start;unicode-bidi:isolate}
 
-.who{display:flex;flex-direction:column;gap:12px;padding: 20px 30px 30px 30px;}
+.who{display:flex;flex-direction:column;gap:12px;padding: 15px;}
 .who h2{font:200 16px var(--d);display:flex;align-items:center;gap:10px;}
 .who h2 span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background: linear-gradient(145deg, #df6e73, #b93d41);box-shadow: inset 0 1px 1px #ffffff, 0 4px 10px -4px rgb(107 107 107 / 50%);color: #000000;}
 .row{display:grid;grid-template-columns: repeat(3,1fr);gap:8px}
 
 /* buttons: left-to-right inner gradient fill on hover */
-.btn{--t1: #fff;--t2: #cfcfcf;--h1: #aaaaaa;--h2: #7d7d7d;--tx: #444444;--hx:#fff;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 4px;border-radius: 0px;text-decoration:none;font-weight:700;font-size:12.5px;line-height:1.2;text-align:center;color: #ffffff;background:linear-gradient(90deg,var(--h1),var(--h2)) no-repeat left center/0% 100%,linear-gradient(180deg,var(--t1),var(--t2));box-shadow:inset 0 1.5px 1px rgba(255,255,255,.95),inset 0 -2px 3px rgba(255,255,255,.35),0 8px 16px -8px rgba(58,46,77,.4);transition:background-size .6s cubic-bezier(.25,.8,.25,1),color .35s .05s,transform .15s}
+.btn{--t1: #fff;--t2: #cfcfcf;--h1: #aaaaaa;--h2: #7d7d7d;--tx: #444444;--hx:#fff;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 4px;border-radius: 5px;text-decoration:none;font-weight:700;font-size:12.5px;line-height:1.2;text-align:center;color: #ffffff;background:linear-gradient(90deg,var(--h1),var(--h2)) no-repeat left center/0% 100%,linear-gradient(180deg,var(--t1),var(--t2));box-shadow:inset 0 1.5px 1px rgba(255,255,255,.95),inset 0 -2px 3px rgba(255,255,255,.35),0 8px 16px -8px rgba(58,46,77,.4);transition:background-size .6s cubic-bezier(.25,.8,.25,1),color .35s .05s,transform .15s}
 .btn:hover,.btn:focus-visible,.btn:active{background-size:100% 100%,100% 100%;color:var(--hx)}
 .btn:active{transform:scale(.97)}
 .call{--t1: #df6e73;--t2: #b93d41;--h1: #df6e73;--h2: #df6e73;--tx: #df6e73;--hx: #ffffff;}
 .wa{--t1:#45e47f;--t2:#1fbf58;--h1:#0f8f7e;--h2:#25d366;--tx:#fff;--hx:#fff}
 .mail{--t1: #b93d41;--t2: #df6e73;--h1: #df6e73;--h2: #df6e73;--tx: #b93d41;--hx:#fff}
 .dir{--t1: #df6e73;--t2: #b93d41;--h1: #df6e73;--h2: #df6e73;--tx: #df6e73;--hx: #fff;}
-.live{padding:17px 12px;font-size:15px;gap:10px;border-radius: 0px;}
+.live{padding:17px 12px;font-size:15px;gap:10px;border-radius: 5px;}
 .live svg{width:1.4em;height:1.4em}
 
 .warn{display:grid;grid-template-columns: 116px 1fr;padding: 20px;}
-.warn>div{display:grid;place-items:center;background: linear-gradient(
+.warn>div{display:grid;place-items:center;border-radius: 5px;background: linear-gradient(
 127deg, #b93d41, #df6e73);border-inline-end:1px solid rgba(255,255,255,.7);color:#d9731f}
 .warn svg{width: 60px;height: 60px;}
 .warn p{padding: 0px 20px 0px 20px;font-size: 15px;color:var(--mute);line-height: 1.46em;}
@@ -165,7 +165,7 @@ Muchas gracias de antemano por tu atención, amabilidad y ayuda. Cualquier esfue
     </div>
   </section>
 
-  <div class="glass" style="/* border-radius:28px; */padding:6px"><a class="btn wa live" href="https://wa.me/905314907039?text=Mars%20bulundu.%20Canl%C4%B1%20konumumu%20payla%C5%9F%C4%B1yorum."><svg class="f"><use href="#wa"></use></svg><t tr="WhatsApp ile canlı konum paylaş" en="Share live location on WhatsApp" es="Compartir ubicación en vivo" fr="Partager ma position en direct" ru="Отправить геопозицию" ar="مشاركة الموقع المباشر" de="Live-Standort teilen" it="Condividi la posizione live"></t></a></div>
+  <div class="glass" style="/* border-radius:28px; */padding:15px"><a class="btn wa live" href="https://wa.me/905314907039?text=Mars%20bulundu.%20Canl%C4%B1%20konumumu%20payla%C5%9F%C4%B1yorum."><svg class="f"><use href="#wa"></use></svg><t tr="WhatsApp ile canlı konum paylaş" en="Share live location on WhatsApp" es="Compartir ubicación en vivo" fr="Partager ma position en direct" ru="Отправить геопозицию" ar="مشاركة الموقع المباشر" de="Live-Standort teilen" it="Condividi la posizione live"></t></a></div>
 
   <section class="glass warn">
     <div><svg><use href="#al"></use></svg></div>
